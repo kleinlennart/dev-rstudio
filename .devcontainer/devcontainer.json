@@ -13,9 +13,13 @@
             // github::r-lib/crayon
         }
     },
+
+    // Start server
     "postAttachCommand": {
         "rstudio-start": "rserver"
     },
+
+    // RStudio Server Ports
     "forwardPorts": [
         8787
     ],
