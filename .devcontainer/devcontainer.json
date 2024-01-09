@@ -6,19 +6,16 @@
             "packages": "jq"
         },
         "ghcr.io/rocker-org/devcontainer-features/rstudio-server": {},
-
         // install R packages via pak::pak()
         // github::r-lib/crayon
         "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
-            "packages": "usethis,devtools,benchmarkme"
+            "packages": "palmerpenguins"
         }
     },
-
     // Start server
     "postAttachCommand": {
         "rstudio-start": "rserver"
     },
-
     // RStudio Server Ports
     "forwardPorts": [
         8787
