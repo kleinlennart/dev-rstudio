@@ -1,13 +1,22 @@
+// Templates: https://github.com/rocker-org/devcontainer-templates/tree/main/src/r-ver
+// Images: https://github.com/rocker-org/devcontainer-images
+// r-ver, tidyverse
 {
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.3",
     "features": {
-        // the 'jq' command must be installed to update rstudio-prefs.json
+        
+        // https://github.com/rocker-org/devcontainer-features/tree/main/src/apt-packages
+        // the 'jq' command must be installed to update rstudio-prefs.json (rstudio-server function)
         "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
             "packages": "jq"
         },
+        
+        // https://github.com/rocker-org/devcontainer-features/tree/main/src/rstudio-server
         "ghcr.io/rocker-org/devcontainer-features/rstudio-server": {},
+        
+        // https://github.com/rocker-org/devcontainer-features/tree/main/src/r-packages
         // install R packages via pak::pak()
-        // github::r-lib/crayon
+        // example: github::r-lib/crayon
         "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
             "packages": "palmerpenguins"
         }
