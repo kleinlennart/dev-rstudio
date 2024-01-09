@@ -1,7 +1,17 @@
 {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/rocker-org/devcontainer-features/rstudio-server": {}
+        // the 'jq' command must be installed to update rstudio-prefs.json
+        "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            "packages": "jq"
+        },
+        "ghcr.io/rocker-org/devcontainer-features/rstudio-server": {},
+
+        // install R packages via pak::pak()
+        "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+            "packages": "usethis,devtools,benchmarkme"
+            // github::r-lib/crayon
+        }
     },
     "postAttachCommand": {
         "rstudio-start": "rserver"
